@@ -7,8 +7,24 @@
 
   <label class="tt-control-label mb32">
     Пароль
-    <input class="tt-input" formControlName="password" type="text" placeholder="Введите пароль">
+
+    <div class="password-input">
+
+      <input class="tt-input" formControlName="password" [type]="isPasswordVisible() ? 'text' : 'password'" placeholder="Введите пароль">
+      <button class="password-eye-btn" [class.active]="isPasswordVisible()" (click)="isPasswordVisible.set(!isPasswordVisible())">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
   </label>
+
+  <!-- <svg width="190" height="170" viewBox="0 0 19 17">
+    <path d="M9.38281 5.5H9.5C10.11771 5.5 10.763 5.5 10.763 5.5L10.763 11.5C10.763 11.5 10.11771 11.5 9.5 11.5H9.38281Z M14.5 11.5L4.5 11.5L4.5 5.5L14.5 5.5Z M14.5 5.5L4.5 5.5L4.5 11.5L14.5 11.5Z" fill="white" fill-opacity="0.75"></path>
+  </svg> -->
 
   <button class="btn btn-shadow" type="submit">Войти</button>
 </form>
