@@ -1,0 +1,11 @@
+<img class="avatar" [src]="preview()" alt="Avatar">
+
+<div class="dropzone" dnd (keyup.enter)="fileDrop.click()" (fileDropped)="onFileDroped($event)">
+
+  <div class="dropzone-content">
+    <svg icon="upload"></svg>
+    <span class="medium-text">Перетащите изображение или Загрузите (разрешение до 5,000 x 5,000 px)</span>
+  </div>
+
+  <input class="avatar-input" tabindex="-1" type="file" [(ngModel)]="avatar" #fileDrop (change)="fileBrowserHandler($event)">
+</div>

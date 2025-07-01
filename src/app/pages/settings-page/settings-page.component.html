@@ -1,7 +1,8 @@
 <app-profile-header></app-profile-header>
 
-<form class="profile-form" [formGroup]="form">
-  <div class="two-columns">
+<form class="profile-form__wrapper" [formGroup]="form">
+  <div class="profile-form">
+    <div class="two-columns">
     <label class="tt-form-label">
       <span class="tt-form-label__text">Имя</span>
       <input class="tt-form-input" type="text" formControlName="firstName">
@@ -23,8 +24,22 @@
       <textarea class="tt-form-input tt-textarea" formControlName="description" rows="4"></textarea>
     </label>
 
+    <label class="tt-form-label" #pew>
+      <span class="tt-form-label__text">Аватар</span>
+      <app-avatar-upload></app-avatar-upload>
+    </label>
+
+
+
     <label class="tt-form-label">
       <span class="tt-form-label__text">Навыки (стэк)</span>
-      <input class="tt-form-input" type="text" formControlName="description">
+      <input class="tt-form-input" type="text" formControlName="stack">
     </label>
+  </div>
+
+  <div class="">
+    <div class="">
+      <button class="btn" (click)="onSave()">Сохранить</button>
+    </div>
+  </div>
 </form>

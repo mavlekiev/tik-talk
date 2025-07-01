@@ -1,11 +1,11 @@
 export interface Profile {
   id: number;
-  username: string;
-  description: string;
+  username: string | null | undefined;
+  description: string | null | undefined;
   avatarUrl: string | null;
   subscriptionsAmount: number;
-  firstName: string;
-  lastName: string;
+  firstName: string | null | undefined;
+  lastName: string | null | undefined;
   isActive: boolean;
   stack: string[];
   city: string;
